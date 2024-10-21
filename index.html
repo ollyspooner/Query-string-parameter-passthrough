@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/page2.html">Other page</a>
+    </nav>
+    <main>
+      <p>
+        <a href="/?GD_AParam=Things&BParam=Stuff&GD_CParam=Nonsense&GD2_CParam=BiggerNonsense">/?GD_AParam=Things&BParam=Stuff&GD_CParam=Nonsense</a>
+      </p>
+      <h1>Home page</h1>
+      <table>
+        <tr>
+          <td><a href="/page2.html" class="btn-donate donate-button">Donate</a></td>
+          <td><code>&lt;a href="/page2.html" class="btn-donate donate-button">Donate&lt;/a></code></td>
+          <td><p>Plain donate button. Should be left as is.</p></td>
+        </tr>
+        <tr>
+          <td><a href="/page2.html" class="btn-donate donate-button" data-param-prefix="GD_">Donate</a></td>
+          <td><code>&lt;a href="/page2.html" class="btn-donate donate-button" data-param-prefix="GD_">Donate&lt;/a></code></td>
+          <td><p>Button with passed on params.</p></td>
+        </tr>
+        <tr>
+          <td><a href="/page2.html?existingparam=666" class="btn-donate donate-button" data-param-prefix="GD_">Donate</a></td>
+          <td><code>&lt;a href="/page2.html?existingparam=666" class="btn-donate donate-button" data-param-prefix="GD_">Donate&lt;/a></code></td>
+          <td><p>Button with existing params that get added to by the passed on params.</p></td>
+        </tr>
+        <tr>
+          <td><a href="/page2.html?existingparam=666&AParam=Fingers" class="btn-donate donate-button" data-param-prefix="GD_">Donate</a></td>
+          <td><code>&lt;a href="/page2.html?existingparam=666&AParam=Fingers" class="btn-donate donate-button" data-param-prefix="GD_">Donate&lt;a></code></td>
+          <td><p>Button with existing params that get replaced by the passed on params if they match.</p></td>
+        </tr>
+        <tr>
+          <td><a href="/page2.html?existingparam=666&AParam=Fingers" class="btn-donate donate-button" data-param-prefix="GD2_">Donate</a></td>
+          <td><code>&lt;a href="/page2.html?existingparam=666&AParam=Fingers" class="btn-donate donate-button" data-param-prefix="GD2_">Donate&lt;/a></code></td>
+          <td><p>Button with existing params that get replaced by the passed on params if they match, but the prefix is different.</p></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>
