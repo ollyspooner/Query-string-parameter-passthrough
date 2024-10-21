@@ -13,6 +13,10 @@ Include the sbos-qspp.js file in your page in a SCRIPT tag.
 
 Add a data attribute of "data-param-prefix" to the A element to be updated. The attribute should specify the prefix that will identify the parameters to include from the query string.
 
+```html
+<a href="/page2.html" data-param-prefix="GD_">
+```
+
 The "href" attribute forms the basis of the new url:
 * Any existing parameters will be preserved
 * Parameters from the query string with a matching prefix will be appended to the url.
